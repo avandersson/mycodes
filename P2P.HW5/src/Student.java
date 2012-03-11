@@ -26,10 +26,12 @@ public class Student implements Runnable{
 		Socket peer = null, socket = null;
 
 		try {
-			System.out.println("Student: " + id + ", With port: " + 8080 + id);
+			
 			/* Creates a server socket that will be listening for requests */
 			server = new ServerSocket(8080 + id);
-
+			
+			System.out.println("Student: " + id + ", With port: " + server.getLocalPort());
+			
 			/* If someone requests a connection, accept the connection */
 			peer = server.accept();
 			/* Creates a reader and a writer to be able to receive and 

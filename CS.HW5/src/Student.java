@@ -23,7 +23,7 @@ public class Student implements Runnable {
 		try {
 			/* Tries to connect to the server */
 			socket = new Socket("localhost", 8080);
-			System.out.println(socket.getInetAddress());
+			System.out.println("Student: " + name + " with adress: " + socket.getInetAddress() + " on port: " + socket.getLocalPort());
 			/* Creates a writer */
 			out = new PrintWriter(socket.getOutputStream(), true);
 			/* Sends a message to the teacher containing the students name */
